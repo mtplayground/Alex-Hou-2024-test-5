@@ -30,3 +30,9 @@ export interface GameState {
   queue: TetrominoQueue
   score: number
 }
+
+export interface HighScoreEntry {
+  achievedAt: string
+  initials: string
+  score: number
+}
