@@ -1,13 +1,13 @@
 import type { TetrominoType } from '../types/game'
 
-export const BOARD_BACKGROUND = '#020617'
+export const BOARD_BACKGROUND = '#06101d'
 
 export const TETROMINO_COLORS: Readonly<Record<TetrominoType, string>> = {
-  I: '#38bdf8',
-  O: '#facc15',
-  T: '#c084fc',
-  S: '#4ade80',
-  Z: '#fb7185',
-  J: '#60a5fa',
-  L: '#fb923c',
+  I: '#5ee4ff',
+  O: '#ffd166',
+  T: '#b794f6',
+  S: '#4ee6a3',
+  Z: '#ff6b87',
+  J: '#6f9bff',
+  L: '#ff9f5c',
 }

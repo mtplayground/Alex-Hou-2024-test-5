@@ -1,4 +1,5 @@
 export interface HudProps {
+  className?: string
   level: number
   linesCleared: number
   score: number
@@ -22,11 +23,11 @@ function StatCard({ label, value }: StatCardProps) {
   )
 }
 
-export function Hud({ level, linesCleared, score }: HudProps) {
+export function Hud({ className, level, linesCleared, score }: HudProps) {
   return (
     <section
       aria-label="Game stats"
-      className="w-full max-w-sm rounded-3xl border border-cyan-400/20 bg-slate-950/80 p-5 text-left shadow-2xl shadow-cyan-950/30"
+      className={`w-full rounded-3xl border border-cyan-400/20 bg-slate-950/80 p-5 text-left shadow-2xl shadow-cyan-950/30 ${className ?? 'max-w-sm'}`}
     >
       <div className="mb-5 flex items-center justify-between gap-4">
         <div>

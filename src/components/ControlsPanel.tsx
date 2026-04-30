@@ -8,11 +8,15 @@ const CONTROLS = [
   { action: 'Restart', keyLabel: 'R' },
 ] as const
 
-export function ControlsPanel() {
+export interface ControlsPanelProps {
+  className?: string
+}
+
+export function ControlsPanel({ className }: ControlsPanelProps) {
   return (
     <section
       aria-label="Controls"
-      className="w-full max-w-sm rounded-3xl border border-cyan-400/20 bg-slate-950/80 p-5 text-left shadow-2xl shadow-cyan-950/30"
+      className={`w-full rounded-3xl border border-cyan-400/20 bg-slate-950/80 p-5 text-left shadow-2xl shadow-cyan-950/30 ${className ?? 'max-w-sm'}`}
     >
       <div className="mb-5">
         <p className="text-xs font-semibold uppercase tracking-[0.26em] text-cyan-300">
