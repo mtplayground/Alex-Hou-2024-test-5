@@ -8,7 +8,7 @@ export type CellValue = TetrominoType | null
 
 export type Matrix = CellValue[][]
 export type TetrominoQueue = TetrominoType[]
-export type GamePhase = 'playing' | 'gameOver'
+export type GamePhase = 'playing' | 'paused' | 'gameOver'
 
 export interface Point {
   x: number

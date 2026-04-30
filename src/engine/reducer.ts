@@ -24,6 +24,7 @@ export type GameAction =
   | { type: 'ROTATE_CLOCKWISE' }
   | { type: 'ROTATE_COUNTERCLOCKWISE' }
   | { type: 'SOFT_DROP' }
+  | { type: 'TOGGLE_PAUSE' }
   | ({ type: 'HARD_DROP' } & RandomizedActionPayload)
   | ({ type: 'TICK' } & RandomizedActionPayload)
   | ({ type: 'SPAWN' } & RandomizedActionPayload)
@@ -83,6 +84,15 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
   switch (action.type) {
     case 'RESTART':
       return createInitialGameState({ rng: action.rng })
+    case 'TOGGLE_PAUSE':
+      if (state.phase === 'gameOver') {
+        return state
+      }
+
+      return {
+        ...state,
+        phase: state.phase === 'paused' ? 'playing' : 'paused',
+      }
     case 'SPAWN': {
       const spawnResult = spawnNextPiece(
         state.board,
@@ -101,7 +111,7 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
       break
   }
 
-  if (state.phase === 'gameOver') {
+  if (state.phase !== 'playing') {
     return state
   }
 
@@ -163,4 +173,5 @@ export const gameActions = {
   softDrop: (): GameAction => ({ type: 'SOFT_DROP' }),
   spawn: (rng?: RandomNumberGenerator): GameAction => ({ type: 'SPAWN', rng }),
   tick: (rng?: RandomNumberGenerator): GameAction => ({ type: 'TICK', rng }),
+  togglePause: (): GameAction => ({ type: 'TOGGLE_PAUSE' }),
 }
