@@ -8,6 +8,7 @@ export type CellValue = TetrominoType | null
 
 export type Matrix = CellValue[][]
 export type TetrominoQueue = TetrominoType[]
+export type GamePhase = 'playing' | 'gameOver'
 
 export interface Point {
   x: number
@@ -18,4 +19,14 @@ export interface ActivePiece {
   position: Point
   rotation: RotationIndex
   type: TetrominoType
+}
+
+export interface GameState {
+  activePiece: ActivePiece
+  board: Matrix
+  level: number
+  linesCleared: number
+  phase: GamePhase
+  queue: TetrominoQueue
+  score: number
 }
