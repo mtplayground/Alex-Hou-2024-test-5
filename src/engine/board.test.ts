@@ -1,8 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import type { ActivePiece } from '../types/game'
+import type { ActivePiece, CellValue } from '../types/game'
 import {
   BOARD_HEIGHT,
   BOARD_WIDTH,
+  clearFullRows,
   collides,
   collidesWithFloor,
   collidesWithSettledBlocks,
@@ -12,6 +13,8 @@ import {
   getBoardCell,
   hasSettledBlock,
   isPointInsideBoard,
+  isRowFull,
+  lockPiece,
 } from './board'
 
 function createPiece(overrides: Partial<ActivePiece> = {}): ActivePiece {
@@ -104,5 +107,44 @@ describe('board model', () => {
       true
     )
     expect(collides(board, createPiece())).toBe(false)
+  })
+
+  it('locks a piece into the board', () => {
+    const board = createEmptyBoard()
+    const lockedBoard = lockPiece(board, createPiece())
+
+    expect(lockedBoard[0][5]).toBe('T')
+    expect(lockedBoard[1][4]).toBe('T')
+    expect(lockedBoard[1][5]).toBe('T')
+    expect(lockedBoard[1][6]).toBe('T')
+    expect(board[0][5]).toBe(null)
+  })
+
+  it('identifies full rows', () => {
+    expect(
+      isRowFull(Array.from({ length: BOARD_WIDTH }, () => 'I' as CellValue))
+    ).toBe(true)
+    expect(
+      isRowFull([
+        null,
+        ...Array.from({ length: BOARD_WIDTH - 1 }, () => 'I' as CellValue),
+      ])
+    ).toBe(false)
+  })
+
+  it('clears full rows and shifts remaining rows downward', () => {
+    const board = createEmptyBoard()
+    board[17] = Array.from({ length: BOARD_WIDTH }, () => 'S')
+    board[18] = Array.from({ length: BOARD_WIDTH }, () => 'Z')
+    board[19][0] = 'L'
+    board[19][1] = 'L'
+
+    const result = clearFullRows(board)
+
+    expect(result.clearedLineCount).toBe(2)
+    expect(result.board[0].every((cell) => cell === null)).toBe(true)
+    expect(result.board[1].every((cell) => cell === null)).toBe(true)
+    expect(result.board[19][0]).toBe('L')
+    expect(result.board[19][1]).toBe('L')
   })
 })
