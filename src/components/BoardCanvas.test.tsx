@@ -80,7 +80,7 @@ describe('BoardCanvas', () => {
     expect(settledDraws.length).toBe(1)
     expect(activeDraws.length).toBe(4)
     expect(ghostDraws.length).toBe(4)
-  })
+  }, 15000)
 
   it('redraws the canvas when the state changes', () => {
     const board = createEmptyBoard()

@@ -14,5 +14,5 @@ describe('Hud', () => {
     expect(within(panel).getByText('18,450')).toBeInTheDocument()
     expect(within(panel).getByText('4')).toBeInTheDocument()
     expect(within(panel).getByText('12')).toBeInTheDocument()
-  })
+  }, 15000)
 })

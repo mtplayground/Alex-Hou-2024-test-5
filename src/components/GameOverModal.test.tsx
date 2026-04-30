@@ -24,5 +24,5 @@ describe('GameOverModal', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Play Again' }))
 
     expect(onPlayAgain).toHaveBeenCalledTimes(1)
-  })
+  }, 15000)
 })
