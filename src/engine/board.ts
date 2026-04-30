@@ -68,3 +68,37 @@ export function collides(board: Matrix, piece: ActivePiece): boolean {
     collidesWithSettledBlocks(board, piece)
   )
 }
+
+export function lockPiece(board: Matrix, piece: ActivePiece): Matrix {
+  const nextBoard = board.map((row) => [...row])
+
+  for (const cell of getAbsolutePieceCells(piece)) {
+    if (!isPointInsideBoard(cell)) {
+      continue
+    }
+
+    nextBoard[cell.y][cell.x] = piece.type
+  }
+
+  return nextBoard
+}
+
+export function isRowFull(row: Matrix[number]): boolean {
+  return row.every((cell) => cell !== null)
+}
+
+export function clearFullRows(board: Matrix): {
+  board: Matrix
+  clearedLineCount: number
+} {
+  const remainingRows = board.filter((row) => !isRowFull(row)).map((row) => [...row])
+  const clearedLineCount = board.length - remainingRows.length
+  const emptyRows = Array.from({ length: clearedLineCount }, () =>
+    Array.from({ length: BOARD_WIDTH }, () => null)
+  )
+
+  return {
+    board: [...emptyRows, ...remainingRows],
+    clearedLineCount,
+  }
+}
