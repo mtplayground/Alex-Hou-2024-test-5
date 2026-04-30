@@ -1,7 +1,7 @@
-dist/
-node_modules/
-.git/
-.claude/
+.git
+.claude
 .gh_token
-.progress
-npm-debug.log*
+.github_token
+target/debug
+target/wasm32-unknown-unknown
+node_modules
