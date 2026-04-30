@@ -1,23 +1,141 @@
 # Alex-Hou-2024-test-5
 
+A browser-based Tetris implementation built with Vite, React, TypeScript, Tailwind CSS, and a reducer-driven game engine. The app includes a start screen, live gameplay with keyboard controls, pause and game-over overlays, and a local top-10 leaderboard backed by `localStorage`.
+
+## Screenshots
+
+### Start screen
+
+![Start screen](docs/screenshots/start-screen.svg)
+
+### Gameplay
+
+![Gameplay screen](docs/screenshots/gameplay-screen.svg)
+
+### High scores
+
+![High scores screen](docs/screenshots/high-scores-screen.svg)
+
+## Features
+
+- Pure engine modules for tetromino definitions, movement, collision, gravity, scoring, spawn logic, and reducer-based state transitions.
+- Canvas-rendered board with active piece, ghost piece, and next-piece preview.
+- Keyboard controls with DAS-style repeat timing for left, right, and soft drop.
+- Start, play, pause, game-over, and high-scores screens wired through the top-level app without full-page reloads.
+- Local top-10 high-score storage with initials entry for qualifying runs.
+- Dockerized production build served from `nginx:alpine` with SPA fallback support.
+
+## Requirements
+
+- Node.js `22.x`
+- npm `10.x` or newer
+- Optional: Docker for the production container workflow
+
 ## Local development
 
-Install dependencies and start the Vite dev server:
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Create a local env file:
+
+```bash
+cp .env.example .env
+```
+
+Start the dev server on `0.0.0.0:8080`:
+
+```bash
 npm run dev
 ```
+
+Open `http://localhost:8080`.
 
 ## Environment variables
 
 This app reads Vite-exposed environment variables from `.env` files.
 
-1. Copy `.env.example` to `.env`.
-2. Set `VITE_APP_TITLE` to the application title you want displayed.
-3. Start the dev server with `npm run dev`.
+| Variable | Required | Description |
+| --- | --- | --- |
+| `VITE_APP_TITLE` | No | Overrides the app title shown in the browser tab and header. Defaults to `Alex Hou 2024 Test 5`. |
 
-`VITE_APP_TITLE` is used for the browser page title and the title rendered in the app.
+Example `.env.example`:
+
+```bash
+VITE_APP_TITLE=Alex Hou 2024 Test 5
+```
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Starts the Vite dev server on `0.0.0.0:8080`. |
+| `npm run build` | Runs TypeScript project builds and outputs a production bundle to `dist/`. |
+| `npm run preview` | Serves the built app on `0.0.0.0:8080`. |
+| `npm run lint` | Runs ESLint across the project. |
+| `npm run test -- --run` | Runs the Vitest suite once. |
+| `npm run format` | Formats the project with Prettier. |
+
+## Build and test
+
+Run the production build:
+
+```bash
+npm run build
+```
+
+Run linting:
+
+```bash
+npm run lint
+```
+
+Run the test suite:
+
+```bash
+npm run test -- --run
+```
+
+## Controls
+
+| Key | Action |
+| --- | --- |
+| `←` | Move left |
+| `→` | Move right |
+| `↑` | Rotate clockwise |
+| `↓` | Soft drop |
+| `Space` | Hard drop |
+| `P` | Pause / resume |
+| `R` | Restart current run |
+
+## High scores
+
+- The app stores the local top 10 runs in `localStorage` under `tetris.highScores`.
+- A game-over score prompts for initials only when it qualifies for the leaderboard.
+- Initials are sanitized to three uppercase letters before save.
+
+## Docker
+
+Build the production image:
+
+```bash
+docker build -t alex-hou-2024-test-5 .
+```
+
+Run the container on `0.0.0.0:8080`:
+
+```bash
+docker run --rm -p 8080:8080 alex-hou-2024-test-5
+```
+
+The container uses a multi-stage build:
+
+- `node:22-alpine` installs dependencies and builds the Vite app.
+- `nginx:alpine` serves the static assets from `dist/`.
+
+The nginx configuration listens on port `8080`, caches `/assets/` aggressively, and routes unknown paths back to `index.html` for SPA navigation.
 
 ## Manual smoke-test checklist
 
@@ -41,22 +159,6 @@ Support checks performed in this VM:
 2. `npm run lint`
 3. `npm run test -- --run`
 
-## Docker
+Browser note:
 
-Build the production image:
-
-```bash
-docker build -t alex-hou-2024-test-5 .
-```
-
-Run the container on `0.0.0.0:8080`:
-
-```bash
-docker run --rm -p 8080:8080 alex-hou-2024-test-5
-```
-
-The container uses a multi-stage build:
-- `node:22-alpine` builds the Vite app.
-- `nginx:alpine` serves the static assets.
-
-The nginx configuration includes an SPA fallback so client-side routes resolve to `index.html`.
+- The Sprite VM used for repository automation does not include the system libraries needed to launch Playwright’s Chromium or Firefox binaries, so the browser-specific smoke checklist above must still be executed in a local desktop environment.

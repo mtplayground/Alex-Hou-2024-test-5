@@ -1,0 +1,46 @@
+<svg width="1280" height="820" viewBox="0 0 1280 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="640" y1="0" x2="640" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071526"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(360 90) rotate(62.8) scale(300 520)">
+      <stop stop-color="#5EE4FF" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#5EE4FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="820" fill="url(#bg)"/>
+  <rect width="1280" height="820" fill="url(#glow)"/>
+  <rect x="44" y="34" width="1192" height="122" rx="32" fill="#09111F" fill-opacity="0.88" stroke="#5EE4FF" stroke-opacity="0.16"/>
+  <text x="86" y="80" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="5">ARCADE STACK</text>
+  <text x="86" y="124" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="44" font-weight="800">Alex Hou 2024 Test 5</text>
+  <text x="86" y="154" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Start a run, pause without reloading, and keep the local leaderboard updated.</text>
+  <rect x="959" y="72" width="128" height="46" rx="23" fill="#67E8F9"/>
+  <text x="987" y="100" fill="#082F49" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.5">START GAME</text>
+  <rect x="1101" y="72" width="104" height="46" rx="23" fill="#0F172A" stroke="#67E8F9" stroke-opacity="0.22"/>
+  <text x="1123" y="100" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">HIGH SCORES</text>
+  <rect x="44" y="188" width="760" height="588" rx="34" fill="#09111F" fill-opacity="0.92" stroke="#5EE4FF" stroke-opacity="0.14"/>
+  <rect x="90" y="228" width="72" height="28" rx="14" fill="#67E8F9"/>
+  <text x="109" y="246" fill="#082F49" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">READY</text>
+  <text x="90" y="320" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="54" font-weight="800">Drop in when you're ready.</text>
+  <text x="90" y="372" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="24">Start a fresh board, play with keyboard controls, and save a local</text>
+  <text x="90" y="406" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="24">high score when your run breaks into the top 10.</text>
+  <rect x="90" y="484" width="176" height="54" rx="27" fill="#67E8F9"/>
+  <text x="135" y="518" fill="#082F49" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1.6">START RUN</text>
+  <rect x="284" y="484" width="212" height="54" rx="27" fill="#0F172A" stroke="#64748B"/>
+  <text x="326" y="518" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1.5">VIEW LEADERBOARD</text>
+  <rect x="834" y="188" width="402" height="284" rx="34" fill="#09111F" fill-opacity="0.92" stroke="#5EE4FF" stroke-opacity="0.14"/>
+  <text x="872" y="230" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4">CONTROLS</text>
+  <text x="872" y="272" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="34" font-weight="800">Key Bindings</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="872" y="304" width="326" height="42" rx="18" fill="#111C2D" stroke="#5EE4FF" stroke-opacity="0.12"/><text x="896" y="331" fill="#F8FAFC" font-size="16">Move left</text><text x="1142" y="331" fill="#BAF5FF" font-size="15" font-weight="700">←</text>
+    <rect x="872" y="356" width="326" height="42" rx="18" fill="#111C2D" stroke="#5EE4FF" stroke-opacity="0.12"/><text x="896" y="383" fill="#F8FAFC" font-size="16">Move right</text><text x="1140" y="383" fill="#BAF5FF" font-size="15" font-weight="700">→</text>
+    <rect x="872" y="408" width="326" height="42" rx="18" fill="#111C2D" stroke="#5EE4FF" stroke-opacity="0.12"/><text x="896" y="435" fill="#F8FAFC" font-size="16">Rotate</text><text x="1143" y="435" fill="#BAF5FF" font-size="15" font-weight="700">↑</text>
+  </g>
+  <rect x="834" y="494" width="402" height="282" rx="34" fill="#09111F" fill-opacity="0.92" stroke="#5EE4FF" stroke-opacity="0.14"/>
+  <text x="872" y="536" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4">RECORDS</text>
+  <text x="872" y="578" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="34" font-weight="800">Top 10 Runs</text>
+  <rect x="872" y="614" width="326" height="110" rx="22" fill="#111C2D" stroke="#5EE4FF" stroke-opacity="0.14" stroke-dasharray="6 8"/>
+  <text x="936" y="676" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">No scores recorded yet.</text>
+  <text x="1038" y="705" fill="#64748B" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Finish a run to claim the first spot.</text>
+</svg>

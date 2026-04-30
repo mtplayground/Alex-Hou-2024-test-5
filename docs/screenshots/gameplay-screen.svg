@@ -1,0 +1,57 @@
+<svg width="1280" height="820" viewBox="0 0 1280 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="640" y1="0" x2="640" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071526"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="820" fill="url(#bg)"/>
+  <rect x="44" y="34" width="1192" height="122" rx="32" fill="#09111F" fill-opacity="0.88" stroke="#5EE4FF" stroke-opacity="0.16"/>
+  <text x="86" y="80" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="5">ARCADE STACK</text>
+  <text x="86" y="124" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="44" font-weight="800">Alex Hou 2024 Test 5</text>
+  <rect x="959" y="72" width="128" height="46" rx="23" fill="#67E8F9"/>
+  <text x="981" y="100" fill="#082F49" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">RESTART RUN</text>
+  <rect x="1101" y="72" width="104" height="46" rx="23" fill="#0F172A" stroke="#67E8F9" stroke-opacity="0.22"/>
+  <text x="1123" y="100" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">HIGH SCORES</text>
+  <rect x="164" y="198" width="470" height="580" rx="36" fill="#09111F" fill-opacity="0.92" stroke="#5EE4FF" stroke-opacity="0.14"/>
+  <rect x="190" y="222" width="418" height="532" rx="24" fill="#06101D"/>
+  <g stroke="#16253A" stroke-width="1">
+    <path d="M231.8 222V754"/><path d="M273.6 222V754"/><path d="M315.4 222V754"/><path d="M357.2 222V754"/><path d="M399 222V754"/><path d="M440.8 222V754"/><path d="M482.6 222V754"/><path d="M524.4 222V754"/><path d="M566.2 222V754"/>
+    <path d="M190 248.6H608"/><path d="M190 275.2H608"/><path d="M190 301.8H608"/><path d="M190 328.4H608"/><path d="M190 355H608"/><path d="M190 381.6H608"/><path d="M190 408.2H608"/><path d="M190 434.8H608"/><path d="M190 461.4H608"/><path d="M190 488H608"/><path d="M190 514.6H608"/><path d="M190 541.2H608"/><path d="M190 567.8H608"/><path d="M190 594.4H608"/><path d="M190 621H608"/><path d="M190 647.6H608"/><path d="M190 674.2H608"/><path d="M190 700.8H608"/><path d="M190 727.4H608"/>
+  </g>
+  <rect x="357.2" y="355" width="41.8" height="26.6" rx="4" fill="#B794F6"/>
+  <rect x="399" y="355" width="41.8" height="26.6" rx="4" fill="#B794F6"/>
+  <rect x="440.8" y="355" width="41.8" height="26.6" rx="4" fill="#B794F6"/>
+  <rect x="399" y="381.6" width="41.8" height="26.6" rx="4" fill="#B794F6"/>
+  <rect x="482.6" y="647.6" width="41.8" height="26.6" rx="4" fill="#5EE4FF" fill-opacity="0.18"/>
+  <rect x="524.4" y="647.6" width="41.8" height="26.6" rx="4" fill="#5EE4FF" fill-opacity="0.18"/>
+  <rect x="566.2" y="647.6" width="41.8" height="26.6" rx="4" fill="#5EE4FF" fill-opacity="0.18"/>
+  <rect x="608" y="647.6" width="0" height="26.6" rx="4" fill="#5EE4FF" fill-opacity="0.18"/>
+  <rect x="190" y="701" width="41.8" height="26.6" rx="4" fill="#4EE6A3"/>
+  <rect x="231.8" y="701" width="41.8" height="26.6" rx="4" fill="#4EE6A3"/>
+  <rect x="273.6" y="701" width="41.8" height="26.6" rx="4" fill="#FF6B87"/>
+  <rect x="315.4" y="701" width="41.8" height="26.6" rx="4" fill="#FF9F5C"/>
+  <rect x="886" y="198" width="350" height="182" rx="30" fill="#09111F" fill-opacity="0.92" stroke="#5EE4FF" stroke-opacity="0.14"/>
+  <text x="916" y="238" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4">STATUS</text>
+  <text x="916" y="272" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="30" font-weight="800">Current Run</text>
+  <rect x="1098" y="222" width="88" height="30" rx="15" fill="#1E3347" stroke="#5EE4FF" stroke-opacity="0.2"/>
+  <text x="1122" y="241" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">LIVE</text>
+  <rect x="916" y="298" width="92" height="62" rx="22" fill="#111C2D"/><text x="938" y="322" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2">SCORE</text><text x="936" y="350" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="24" font-weight="800">4,200</text>
+  <rect x="1015" y="298" width="92" height="62" rx="22" fill="#111C2D"/><text x="1041" y="322" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2">LEVEL</text><text x="1049" y="350" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="24" font-weight="800">3</text>
+  <rect x="1114" y="298" width="92" height="62" rx="22" fill="#111C2D"/><text x="1140" y="322" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2">LINES</text><text x="1140" y="350" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="24" font-weight="800">18</text>
+  <rect x="886" y="402" width="350" height="170" rx="30" fill="#09111F" fill-opacity="0.92" stroke="#5EE4FF" stroke-opacity="0.14"/>
+  <text x="916" y="442" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4">QUEUE</text>
+  <text x="916" y="476" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="30" font-weight="800">Next Piece</text>
+  <rect x="916" y="498" width="140" height="54" rx="20" fill="#111C2D"/>
+  <rect x="955" y="510" width="22" height="22" rx="3" fill="#5EE4FF"/>
+  <rect x="977" y="510" width="22" height="22" rx="3" fill="#5EE4FF"/>
+  <rect x="999" y="510" width="22" height="22" rx="3" fill="#5EE4FF"/>
+  <rect x="1021" y="510" width="22" height="22" rx="3" fill="#5EE4FF"/>
+  <rect x="886" y="594" width="350" height="184" rx="30" fill="#09111F" fill-opacity="0.92" stroke="#5EE4FF" stroke-opacity="0.14"/>
+  <text x="916" y="634" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4">CONTROLS</text>
+  <text x="916" y="668" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="30" font-weight="800">Key Bindings</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="916" y="690" width="290" height="28" rx="14" fill="#111C2D"/><text x="936" y="709" fill="#F8FAFC" font-size="14">Move left / right / down</text><text x="1158" y="709" fill="#BAF5FF" font-size="14" font-weight="700">← → ↓</text>
+    <rect x="916" y="724" width="290" height="28" rx="14" fill="#111C2D"/><text x="936" y="743" fill="#F8FAFC" font-size="14">Rotate / hard drop / pause</text><text x="1128" y="743" fill="#BAF5FF" font-size="14" font-weight="700">↑ Space P</text>
+  </g>
+</svg>
