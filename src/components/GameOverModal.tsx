@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import {
   addHighScore,
   qualifiesForHighScores,
@@ -26,10 +26,7 @@ export function GameOverModal({
 }: GameOverModalProps) {
   const [initials, setInitials] = useState('')
   const [savedScore, setSavedScore] = useState<number | null>(null)
-  const existingEntries = useMemo(
-    () => (highScoreStorage ? readHighScores(highScoreStorage) : []),
-    [highScoreStorage]
-  )
+  const existingEntries = highScoreStorage ? readHighScores(highScoreStorage) : []
   const shouldPromptForInitials =
     visible &&
     highScoreStorage !== undefined &&

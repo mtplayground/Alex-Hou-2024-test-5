@@ -104,4 +104,41 @@ describe('GameOverModal', () => {
 
     expect(screen.queryByLabelText('New High Score')).not.toBeInTheDocument()
   }, 15000)
+
+  it('re-reads stored scores for later game-over sessions', () => {
+    const storage = new MemoryStorage()
+
+    const { rerender } = render(
+      <GameOverModal
+        finalScore={1200}
+        highScoreStorage={storage}
+        onPlayAgain={() => {}}
+        visible
+      />
+    )
+
+    expect(screen.getByLabelText('New High Score')).toBeInTheDocument()
+
+    storage.setItem(
+      HIGH_SCORES_STORAGE_KEY,
+      JSON.stringify(
+        Array.from({ length: 10 }, (_, index) => ({
+          achievedAt: `2026-04-${String(index + 1).padStart(2, '0')}T12:00:00.000Z`,
+          initials: `P${index}`,
+          score: 2000 - index * 100,
+        }))
+      )
+    )
+
+    rerender(
+      <GameOverModal
+        finalScore={100}
+        highScoreStorage={storage}
+        onPlayAgain={() => {}}
+        visible
+      />
+    )
+
+    expect(screen.queryByLabelText('New High Score')).not.toBeInTheDocument()
+  }, 15000)
 })
