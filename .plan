@@ -1,0 +1,56 @@
+ZeroClaw architecture plan
+
+Module structure
+- `src/main.tsx`: Vite entrypoint.
+- `src/App.tsx`: top-level lifecycle wiring, start screen, game session flow, responsive shell.
+- `src/app/`: app-level constants and environment helpers.
+- `src/engine/`: pure game logic with no React or DOM dependencies.
+- `src/engine/tetrominoes.ts`: shape definitions, rotation states, bag source metadata.
+- `src/engine/board.ts`: board model, cell helpers, collision detection.
+- `src/engine/movement.ts`: move, rotate, soft drop, hard drop helpers.
+- `src/engine/scoring.ts`: line clears, score, level thresholds, gravity timing.
+- `src/engine/reducer.ts`: authoritative reducer and exposed game-state API.
+- `src/hooks/useGame.ts`: reducer wrapper, timer loop, action dispatch helpers.
+- `src/hooks/useKeyboardControls.ts`: keyboard bindings and repeat handling.
+- `src/components/BoardCanvas.tsx`: canvas renderer for board and active piece.
+- `src/components/NextPiecePreview.tsx`: preview queue panel.
+- `src/components/HudPanel.tsx`: score, level, lines display.
+- `src/components/PauseOverlay.tsx`: pause state overlay.
+- `src/components/GameOverModal.tsx`: game-over flow and score submission.
+- `src/components/ControlsHelp.tsx`: controls reference.
+- `src/components/HighScoresView.tsx`: leaderboard list.
+- `src/components/InitialsEntryForm.tsx`: initials entry UI.
+- `src/storage/highScores.ts`: localStorage persistence and ranking helpers.
+- `src/types/game.ts`: shared engine and UI types.
+- `src/styles/`: Tailwind entry CSS plus any focused component-level styling.
+- `src/test/`: Vitest setup and engine unit tests.
+
+Shared types
+- `TetrominoType`: `I | O | T | S | Z | J | L`.
+- `RotationIndex`: `0 | 1 | 2 | 3`.
+- `CellValue`: `null | TetrominoType`.
+- `Point`: `{ x: number; y: number }`.
+- `Matrix`: `CellValue[][]`.
+- `ActivePiece`: `{ type, rotation, position }`.
+- `GamePhase`: `idle | playing | paused | gameOver | enteringHighScore`.
+- `GameState`: board, active piece, next queue, score, lines, level, phase, high-score candidate.
+- `GameAction`: reducer actions for spawn, move, rotate, tick, drop, pause, restart, submit score.
+- `HighScoreEntry`: `{ initials: string; score: number; lines: number; level: number; createdAt: string }`.
+
+Dependencies between issues
+- Foundation: `#1`, `#2`, `#3`, `#4`, `#5`, `#26`.
+- Engine data model: `#6` -> `#7` -> `#8` -> `#9` -> `#10` -> `#11` -> `#12`.
+- React integration: `#12` -> `#13` -> `#18` -> `#23`.
+- UI composition: `#14`, `#15`, `#16`, `#17`, `#19` depend on `#13`; `#23` composes them.
+- Persistence and score flow: `#20` -> `#21` and `#22`; `#22` also depends on `#17` and `#23`.
+- Finish pass: `#24` after main UI exists, `#25` after all features, `#26` can start early but should be finalized last.
+
+Key design decisions
+- Keep the engine pure and deterministic. All gameplay rules live in `src/engine/`; React hooks only schedule ticks and dispatch actions.
+- Represent the board as a 2D array of nullable tetromino IDs for simple collision checks and straightforward canvas rendering.
+- Store tetromino rotations as precomputed matrices rather than runtime transforms. This reduces reducer complexity and makes tests direct.
+- Use a reducer-centric API from the beginning so `useGame` is a thin wrapper and engine tests can target reducer transitions.
+- Use a seeded-agnostic 7-bag queue implementation, but isolate bag generation so deterministic tests can inject known sequences.
+- Model gravity in milliseconds per level in the hook layer while keeping the reducer tick-based. This separates timing from rules.
+- Keep localStorage access behind `src/storage/highScores.ts` so the game logic and tests remain free of browser persistence concerns.
+- Use canvas only for the board playfield; keep HUD, overlays, forms, and leaderboard in standard React DOM for simpler accessibility and layout work.
