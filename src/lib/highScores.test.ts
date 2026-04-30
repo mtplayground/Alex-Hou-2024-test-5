@@ -6,6 +6,7 @@ import {
   MAX_HIGH_SCORES,
   normalizeHighScores,
   parseHighScores,
+  qualifiesForHighScores,
   readHighScores,
   writeHighScores,
   type StorageLike,
@@ -117,5 +118,16 @@ describe('high score store', () => {
       'ZZZ:300',
       'BBB:200',
     ])
+  })
+
+  it('reports whether a score qualifies for the top ten', () => {
+    const fullBoard = Array.from({ length: MAX_HIGH_SCORES }, (_, index) =>
+      createEntry({ initials: `q${index}`, score: 1000 - index * 100 }, index)
+    )
+
+    expect(qualifiesForHighScores([], 0)).toBe(true)
+    expect(qualifiesForHighScores(fullBoard, 150)).toBe(true)
+    expect(qualifiesForHighScores(fullBoard, 100)).toBe(false)
+    expect(qualifiesForHighScores(fullBoard, -1)).toBe(false)
   })
 })

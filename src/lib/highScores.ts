@@ -109,3 +109,21 @@ export function addHighScore(
 ): HighScoreEntry[] {
   return writeHighScores(storage, [...readHighScores(storage, storageKey), entry], storageKey)
 }
+
+export function qualifiesForHighScores(
+  entries: HighScoreEntry[],
+  score: number
+): boolean {
+  if (!Number.isFinite(score) || score < 0) {
+    return false
+  }
+
+  if (entries.length < MAX_HIGH_SCORES) {
+    return true
+  }
+
+  const normalizedEntries = normalizeHighScores(entries)
+  const lowestScore = normalizedEntries.at(-1)?.score
+
+  return lowestScore === undefined || score > lowestScore
+}
