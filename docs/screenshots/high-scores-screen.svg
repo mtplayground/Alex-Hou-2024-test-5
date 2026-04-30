@@ -1,0 +1,50 @@
+<svg width="1280" height="820" viewBox="0 0 1280 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="640" y1="0" x2="640" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071526"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="820" fill="url(#bg)"/>
+  <rect x="44" y="34" width="1192" height="122" rx="32" fill="#09111F" fill-opacity="0.88" stroke="#5EE4FF" stroke-opacity="0.16"/>
+  <text x="86" y="80" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="5">ARCADE STACK</text>
+  <text x="86" y="124" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="44" font-weight="800">Alex Hou 2024 Test 5</text>
+  <rect x="959" y="72" width="128" height="46" rx="23" fill="#67E8F9"/>
+  <text x="987" y="100" fill="#082F49" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.5">START GAME</text>
+  <rect x="1101" y="72" width="104" height="46" rx="23" fill="#0F172A" stroke="#67E8F9" stroke-opacity="0.22"/>
+  <text x="1123" y="100" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">HIGH SCORES</text>
+  <rect x="44" y="188" width="802" height="588" rx="34" fill="#09111F" fill-opacity="0.92" stroke="#5EE4FF" stroke-opacity="0.14"/>
+  <text x="86" y="230" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4">RECORDS</text>
+  <text x="86" y="274" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="38" font-weight="800">Top 10 Runs</text>
+  <text x="86" y="306" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Highest scores stored on this device.</text>
+  <rect x="86" y="338" width="718" height="372" rx="24" fill="#111C2D" stroke="#5EE4FF" stroke-opacity="0.12"/>
+  <text x="122" y="374" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">RANK</text>
+  <text x="250" y="374" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">PLAYER</text>
+  <text x="560" y="374" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">SCORE</text>
+  <text x="690" y="374" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">DATE</text>
+  <g font-family="Arial, sans-serif">
+    <line x1="110" y1="394" x2="780" y2="394" stroke="#1E3347"/>
+    <text x="122" y="430" fill="#BAF5FF" font-size="18" font-weight="700">#1</text><text x="250" y="430" fill="#F8FAFC" font-size="18">AAA</text><text x="540" y="430" fill="#F8FAFC" font-size="18">20,000</text><text x="668" y="430" fill="#CBD5E1" font-size="18">Apr 01, 2026</text>
+    <line x1="110" y1="448" x2="780" y2="448" stroke="#1E3347"/>
+    <text x="122" y="484" fill="#BAF5FF" font-size="18" font-weight="700">#2</text><text x="250" y="484" fill="#F8FAFC" font-size="18">ZED</text><text x="548" y="484" fill="#F8FAFC" font-size="18">18,450</text><text x="668" y="484" fill="#CBD5E1" font-size="18">Mar 15, 2026</text>
+    <line x1="110" y1="502" x2="780" y2="502" stroke="#1E3347"/>
+    <text x="122" y="538" fill="#BAF5FF" font-size="18" font-weight="700">#3</text><text x="250" y="538" fill="#F8FAFC" font-size="18">BEE</text><text x="556" y="538" fill="#F8FAFC" font-size="18">9,200</text><text x="668" y="538" fill="#CBD5E1" font-size="18">Feb 28, 2026</text>
+    <line x1="110" y1="556" x2="780" y2="556" stroke="#1E3347"/>
+    <text x="122" y="592" fill="#BAF5FF" font-size="18" font-weight="700">#4</text><text x="250" y="592" fill="#F8FAFC" font-size="18">ION</text><text x="556" y="592" fill="#F8FAFC" font-size="18">7,600</text><text x="668" y="592" fill="#CBD5E1" font-size="18">Jan 12, 2026</text>
+  </g>
+  <rect x="878" y="188" width="358" height="284" rx="34" fill="#09111F" fill-opacity="0.92" stroke="#5EE4FF" stroke-opacity="0.14"/>
+  <text x="914" y="230" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4">CONTROLS</text>
+  <text x="914" y="272" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="34" font-weight="800">Key Bindings</text>
+  <rect x="914" y="312" width="286" height="42" rx="18" fill="#111C2D"/><text x="938" y="339" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="16">Hard drop</text><text x="1132" y="339" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="15" font-weight="700">SPACE</text>
+  <rect x="914" y="364" width="286" height="42" rx="18" fill="#111C2D"/><text x="938" y="391" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="16">Pause</text><text x="1160" y="391" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="15" font-weight="700">P</text>
+  <rect x="914" y="416" width="286" height="42" rx="18" fill="#111C2D"/><text x="938" y="443" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="16">Restart</text><text x="1158" y="443" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="15" font-weight="700">R</text>
+  <rect x="878" y="494" width="358" height="282" rx="34" fill="#09111F" fill-opacity="0.92" stroke="#5EE4FF" stroke-opacity="0.14"/>
+  <text x="914" y="536" fill="#BAF5FF" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4">NAVIGATION</text>
+  <text x="914" y="578" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="34" font-weight="800">What next?</text>
+  <text x="914" y="612" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="18">Jump back to the start screen or launch</text>
+  <text x="914" y="638" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="18">another run immediately.</text>
+  <rect x="914" y="674" width="170" height="48" rx="24" fill="#67E8F9"/>
+  <text x="945" y="704" fill="#082F49" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1.4">START NEW RUN</text>
+  <rect x="1096" y="674" width="122" height="48" rx="24" fill="#0F172A" stroke="#64748B"/>
+  <text x="1119" y="704" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1.2">BACK TO START</text>
+</svg>
