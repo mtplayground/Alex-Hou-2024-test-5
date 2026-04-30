@@ -30,17 +30,25 @@ describe('GameOverModal', () => {
 
   it('renders the final score and play again action when visible', () => {
     const onPlayAgain = vi.fn()
+    const onViewHighScores = vi.fn()
 
     render(
-      <GameOverModal finalScore={18450} onPlayAgain={onPlayAgain} visible />
+      <GameOverModal
+        finalScore={18450}
+        onPlayAgain={onPlayAgain}
+        onViewHighScores={onViewHighScores}
+        visible
+      />
     )
 
     expect(screen.getByRole('dialog', { name: 'Game over' })).toBeInTheDocument()
     expect(screen.getByText('18,450')).toBeInTheDocument()
 
     fireEvent.click(screen.getByRole('button', { name: 'Play Again' }))
+    fireEvent.click(screen.getByRole('button', { name: 'High Scores' }))
 
     expect(onPlayAgain).toHaveBeenCalledTimes(1)
+    expect(onViewHighScores).toHaveBeenCalledTimes(1)
   }, 15000)
 
   it('prompts for initials and persists a qualifying high score', () => {

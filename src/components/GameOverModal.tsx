@@ -12,6 +12,7 @@ export interface GameOverModalProps {
   finalScore: number
   onHighScoresSaved?: (entries: HighScoreEntry[]) => void
   onPlayAgain: () => void
+  onViewHighScores?: () => void
   visible: boolean
 }
 
@@ -20,6 +21,7 @@ export function GameOverModal({
   highScoreStorage,
   onHighScoresSaved,
   onPlayAgain,
+  onViewHighScores,
   visible,
 }: GameOverModalProps) {
   const [initials, setInitials] = useState('')
@@ -123,13 +125,24 @@ export function GameOverModal({
             Score saved to the local top 10.
           </p>
         ) : null}
-        <button
-          className="mt-6 inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-950 transition hover:bg-cyan-300"
-          onClick={handlePlayAgain}
-          type="button"
-        >
-          Play Again
-        </button>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <button
+            className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-950 transition hover:bg-cyan-300"
+            onClick={handlePlayAgain}
+            type="button"
+          >
+            Play Again
+          </button>
+          {onViewHighScores ? (
+            <button
+              className="inline-flex items-center justify-center rounded-full border border-slate-600 bg-slate-950/60 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-100 transition hover:border-cyan-300 hover:text-cyan-200"
+              onClick={onViewHighScores}
+              type="button"
+            >
+              High Scores
+            </button>
+          ) : null}
+        </div>
       </div>
     </div>
   )

@@ -19,6 +19,7 @@ export interface KeyboardActions {
 export interface UseKeyboardControlsOptions {
   actions: KeyboardActions
   dispatch: (action: GameAction) => void
+  enabled?: boolean
 }
 
 interface RepeaterState {
@@ -41,6 +42,7 @@ export { INITIAL_REPEAT_DELAY_MS, REPEAT_INTERVAL_MS }
 export function useKeyboardControls({
   actions,
   dispatch,
+  enabled = true,
 }: UseKeyboardControlsOptions): void {
   const actionsRef = useRef(actions)
   const dispatchRef = useRef(dispatch)
@@ -56,6 +58,10 @@ export function useKeyboardControls({
   }, [actions, dispatch])
 
   useEffect(() => {
+    if (!enabled) {
+      return
+    }
+
     function runRepeatingAction(code: RepeatingControl) {
       switch (code) {
         case 'ArrowLeft':
@@ -161,7 +167,7 @@ export function useKeyboardControls({
       window.removeEventListener('keyup', handleKeyUp)
       stopAllRepeaters()
     }
-  }, [])
+  }, [enabled])
 }
 
 export default useKeyboardControls
