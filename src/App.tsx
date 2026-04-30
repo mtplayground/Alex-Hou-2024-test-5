@@ -1,3 +1,5 @@
+import { APP_TITLE } from './config/env'
+
 function App() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-slate-950 px-6 py-16 text-center text-slate-50">
@@ -6,7 +8,7 @@ function App() {
           Tailwind Ready
         </span>
         <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
-          Alex Hou 2024 Test 5
+          {APP_TITLE}
         </h1>
         <p className="mt-4 text-lg text-slate-300">
           Vite, React, TypeScript, and Tailwind CSS are initialized.
