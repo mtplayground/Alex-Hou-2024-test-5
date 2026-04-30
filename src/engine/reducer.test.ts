@@ -129,4 +129,22 @@ describe('game reducer', () => {
     expect(nextState.linesCleared).toBe(0)
     expect(nextState.score).toBe(0)
   })
+
+  it('toggles between playing and paused outside game over', () => {
+    const state = createState()
+
+    const pausedState = gameReducer(state, gameActions.togglePause())
+    const resumedState = gameReducer(pausedState, gameActions.togglePause())
+
+    expect(pausedState.phase).toBe('paused')
+    expect(resumedState.phase).toBe('playing')
+  })
+
+  it('ignores movement while paused', () => {
+    const state = createState({ phase: 'paused' })
+
+    const nextState = gameReducer(state, gameActions.moveLeft())
+
+    expect(nextState).toEqual(state)
+  })
 })
