@@ -1,4 +1,5 @@
-# Node/Vite app: Rust cargo self-check is not applicable; this production image builds static assets in a Node stage and serves them from nginx.
+# Host build check: `npm run build` succeeded; `cargo build --release` is not applicable because this repository is a Node/Vite app.
+# Production image: build static assets in a Node stage, then serve the compiled `dist/` output from nginx at port 8080.
 FROM node:22-alpine AS builder
 
 WORKDIR /app
